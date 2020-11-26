@@ -1,0 +1,48 @@
+  <div class="profile-image-section dropdown">
+    <a
+      (click)="onClickCount()"
+      class="menu-custom-drp dropdown-toggle"
+      data-toggle="dropdown">
+      <fa-icon size="x" style="color:green" [icon]="faBell"></fa-icon>
+    </a>
+    <span (click)="onClickCount()" class="badge badge-danger">{{ counts }}</span>
+    <div class="dropdown-menu list-custom">
+      <p class="title-name">Notification</p>
+      <div class="row cutom-rw">
+        <div class="col-md-12">
+          <p class="unread">{{ counts > 0 ? counts : "No" }} Unread messages</p>
+        </div>
+      </div>
+      <div *ngFor="let notification of notifications">
+        <a ng-click="notifyReaded(item.id,'single')">
+          <div
+            class="row cutom-rw2"
+            ng-repeat="item in dataObject"
+            ng-if="item.is_read == 0"
+          >
+            <div class="col-md-2">
+              <i ng-show="item.is_read == 0" aria-hidden="true"></i>
+              <img width="5%" src="/assets/asset/X-3.png">
+            </div>
+            <div
+              ng-click="myStyle={'color':black}"
+              ng-style="myStyle"
+              class="col-md-10"
+            >
+              <p class="first-line">
+                Your Subscription for {{ notification.productName }} expires in
+                {{ notification.expiry }} day
+              </p>
+              <p class="button-last">
+                <span class="yes-text"
+                  ><a ng-click="notifyReaded(item.id,'single')"></a>
+                </span>
+                <span class="change-now"></span>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <p class="all-notification">Show all notification</p>
+    </div>
+  </div>

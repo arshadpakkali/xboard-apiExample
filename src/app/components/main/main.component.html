@@ -1,0 +1,45 @@
+<div class="grid-parent">
+      <div *ngIf="banner">
+          
+      </div>
+      <div class="grid-1">
+        <div class="dashboard">
+            Dashboard
+        </div>
+      </div>
+      <div class="grid-2">
+        <div *ngFor="let product of toolsProduct; let i=index" class="grid-child card">
+            <div class="grid-child-header">
+              <div class="days-remaining">
+                <span matTooltip="Days Remaining" [ngClass]="{'subscribed': subscribedAnalysis[product._id],'not-subscribed': !subscribedAnalysis[product._id]}"  
+                 [ngStyle]='{"border": subscribedAnalysis[product._id]? "5px solid":"none"}'
+                 [ngStyle]='{"color":subscribedAnalysis[product._id]?.expiry<3?"red":"darkgreen"}'>
+                  {{subscribedAnalysis[product._id]?.expiry}} 
+                </span>
+              </div>
+              <div class="grid-child-image"><img width="25%" src="assets/asset/{{product.name}}.png"></div>
+              {{product.name}}
+            </div>
+          <div class="grid-child-footer">
+            <fa-icon size="2x" matTooltip="Info" (click)="info(product.description)" style="color:#34a4eb" [icon]="faInfoCircle"></fa-icon>
+            <a href="{{product.tutorial}}" matTooltip="Tutorials" target="_blank">
+              <fa-icon size="2x" style="color:#34ebd3;" [icon]="faTv"></fa-icon>
+            </a>
+            <!--<button disabled *ngIf="!subscribedAnalysis[product._id] &&!product.launchable" (click)="clickMe(product)"><fa-icon size="2x" [icon]="faShoppingCart"></fa-icon></button> -->
+            <button style="color:rebeccapurple;background:none;border:none;" *ngIf="!subscribedAnalysis[product._id] &&product.launchable" (click)="clickMe(product)">
+            <fa-icon matTooltip="Subscribe" size="2x" [icon]="faShoppingCart"></fa-icon>
+            </button>
+            <button style="color:rebeccapurple;background:none;border:none;" *ngIf="subscribedAnalysis[product._id] &&product.launchable" (click)="clickMe(product)">
+              <fa-icon matTooltip="Extend License" size="2x" [icon]="faShoppingCart"></fa-icon>
+              </button>
+            <a href="{{api}}{{product.url}}?token={{token}}" style="background:none;color: green" 
+            [ngStyle]='{"display":subscribedAnalysis[product._id]?"block":"none"}' target="_blank">
+              <fa-icon matTooltip="Launch" size="2x" [icon]="faRocket"></fa-icon>
+            </a>
+          </div>
+          <div class="grid-price card">
+            &#8377; {{product.price}}/{{product.subscriptionTime}} days
+          </div>
+          </div>
+    </div>
+</div>

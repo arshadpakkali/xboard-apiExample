@@ -1,0 +1,177 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+span.menu-custom-drp.dropdown-toggle {
+    float: right;
+}
+.dropdown, .dropup {
+    float: right;
+    position: relative;
+}
+.dropdown-menu {    
+    margin: 18px 21px 3px -227px;
+    padding: 0px;
+}
+ul.dropdown-menu.list-custom {
+    width: 250px;
+    height: auto;        
+    background-color: #c7ffec;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+p.title-name {
+    font-size: 13px;
+    display: block;
+    text-align: center;
+    padding: 8px;
+    font-weight: 600;
+    background-color: beige;
+}
+.list-custom li {
+    display: contents;
+}
+.dropdown-menu.list-custom {
+    width: 250px;
+    background-color: #e2e4f1;
+}
+.row.cutom-rw {
+    width: 91%;
+}
+p.unread {
+    font-size: 11px;
+    padding: 5px;
+}
+button.btn.btn-default.allready {
+    padding: 2px 8px;
+    font-size: 12px;
+}
+img.image-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+}
+
+p.first-line {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    color:black;
+}
+p.help-text {
+    font-size: 12px;
+    margin-bottom: 0;
+    color:black;
+}
+p.button-last {
+    float: right;
+    /* color: #2cb3ad; */
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+}
+.row.cutom-rw2 {
+    padding: 7px 0px;
+    background-color: #fff;
+    margin: 10px;
+    cursor: pointer;
+}
+.row.cutom-rw3 {
+    padding: 7px 0px;
+    background-color: #fff;
+    margin: 0px 10px;
+    border: 1px solid #f1f1f1;
+}
+p.today-seperator {
+    font-size: 12px;
+    margin: 10px;
+}
+p.all-notification {
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    color: #1690a0;
+}
+i.fa.fa-circle.custon-circle {
+    font-size: 8px;
+    position: absolute;
+    top: 15px;
+    color: #338ecf;
+    left: 5px;
+}
+
+/* BADGE */
+
+
+.badge{
+    padding: 3px 5px 2px;
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    display: inline-block;
+    min-width: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 10px;
+    pointer-events: none;
+}
+.badge-danger {
+    background-color: #db5565;
+}
+
+
+.fa-10x{
+    font-size: 40px;
+}
+
